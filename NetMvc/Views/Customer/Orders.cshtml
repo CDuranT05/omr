@@ -1,0 +1,139 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model NetMvc.Models.OrdersModel;
+
+<h2>
+    Ordenes <a class="navbar-brand" href="#">
+        <img src="~/shopping-supermarket-cart-full-of-items-vector.jpg" alt="Logo" width="40" height="30" class="d-inline-block align-text-top">
+    </a>
+</h2>
+    <div class="row">
+    <table class="table table-bordered table-hover table-responsive table-striped" style="width:40rem">
+        <thead class="table-primary">
+                <tr>
+                   <td scope="col">ID</td>
+                   <td scope="col">Usuario</td>
+                   <td scope="col">Estado de compra</td>
+                    
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var order in Model.Data)
+                {
+                    <tr>
+                    <td scope="row"> @order.Id</td>
+                        <td>@order.UserName</td>
+                        <td>@order.Status</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+
+    @*Creacion de orden *@
+    @* <div class="card" style="width:24rem">
+        <div class="card-header">Nueva Orden</div>
+
+        <div class="card-body">
+
+        <form class="row g-3" asp-action="SaveOrder">
+
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="Id">Id</label>
+                    <input asp-for="Id" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="UserId">Nombre</label>
+                    <input asp-for="UserId" class="form-control" >
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="Status">Estado</label>
+                    <input asp-for="Status" class="form-control" >
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" asp-for="Create_at">Fecha de Creacion</label>
+                    <input asp-for="Create_at" class="form-control">
+                </div>
+               
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    @*Creacion de Orden-Item *@
+<div class="card" style="width:24rem">
+    <div class="card-header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="~/shopping-supermarket-cart-full-of-items-vector.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                ORDEN DE COMPRA
+            </a>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form class="row g-3" asp-action="OrderSave" method="post">
+            <div class="col-auto">
+                <label asp-for="Product" class="visually-hidden">Productos</label>
+                <select asp-for="Product" asp-items="@Model.Products">
+                    <option>Seleccione un Producto</option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label asp-for="ProductQuanty" class="visually-hidden">Cantidad</label>
+                <input asp-for="ProductQuanty" type="number" max="31" min="1" value="1" step="1">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+            </div>
+        </form>
+
+
+
+        <table class="table  table-hover table-responsive ">
+            <thead>
+                <tr>
+                    <td>Producto</td>
+                    <td>Cantidad</td>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var pd in Model.OrderItems)
+                {
+                    <tr>
+                        <td scope="row">
+                            @pd.Product
+                        </td>
+                        <td>@pd.ProductQuanty</td>
+                        
+                    </tr>
+                }
+            </tbody>
+            <div class="col-auto">
+                <a asp-action="SaveOrder" class="btn btn-primary me-md-2">Guardar Orden</a>
+            </div>
+         </table>
+      
+    </div>
+</div>

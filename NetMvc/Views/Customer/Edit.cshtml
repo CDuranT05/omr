@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+@model NetMvc.Models.CustomerModel
+
+<div class="card">
+    <div class="card-header">Edicion Clientes</div>
+
+    <div class="card-body">
+
+        <form class="row g-3" asp-action="EditSave">
+            <div class="col-md-6">
+                <label asp-for="Id" class="form-label">Id</label>
+                <input asp-for="Id" readonly class="form-control">
+            </div>
+            
+            <div class="col-md-6">
+                <label class="form-label" asp-for="FullName">Nombre completo</label>
+                <input asp-for="FullName" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="minombre@gmail.com">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" asp-for="Gender">Genero</label>
+                <select asp-for="Gender" asp-items="@Model.Genders">
+                    <option>Selecciona tu sexo</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" asp-for="BirthDate">Fecha de nacimiento</label>
+                <input asp-for="BirthDate" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" asp-for="CountryCode">Codigo de Pais</label>
+                <select asp-for="CountryCode" asp-items="@Model.Countries">
+                    <option>Seleccione su pais</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+
+        </form>
+
+
+    </div>
+</div>
