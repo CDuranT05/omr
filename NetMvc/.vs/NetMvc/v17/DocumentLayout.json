@@ -1,30 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\clau\\source\\repos\\NetMvc\\",
+  "WorkspaceRootPath": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\data\\storedbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:data\\storedbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\data\\storedbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:data\\storedbcontex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\db\\gender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\db\\gender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\db\\countrie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\db\\countrie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\db\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\db\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\models\\db\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\db\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\db\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\source\\repos\\netmvc\\models\\db\\merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\db\\merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\db\\merchant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|c:\\users\\clau\\desktop\\mis repositorios\\omr\\netmvc\\models\\exampledl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A9F229B-08C4-4216-B0F7-BC4E32F1C8B6}|NetMvc.csproj|solutionrelative:models\\exampledl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,21 +46,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Gender.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Gender.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Gender.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Gender.cs",
+              "RelativeToolTip": "Models\\Db\\Gender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T13:48:52.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Countrie.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Countrie.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Countrie.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Countrie.cs",
+              "RelativeToolTip": "Models\\Db\\Countrie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T13:38:05.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:27:37.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "users.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\users.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\users.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\users.cs",
+              "RelativeToolTip": "Models\\Db\\users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T16:17:37.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExampleDl.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\ExampleDl.cs",
+              "RelativeDocumentMoniker": "Models\\ExampleDl.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\ExampleDl.cs",
+              "RelativeToolTip": "Models\\ExampleDl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T15:01:06.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CustomerController.cs",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\Controllers\\CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAiwBwAAAA+AAAA",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Controllers\\CustomerController.cs*",
+              "RelativeToolTip": "Controllers\\CustomerController.cs*",
+              "ViewState": "AQIAABUBAAAAAAAAAAAwwMgAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T19:56:12.758Z",
               "EditorCaption": ""
@@ -56,64 +124,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-24T19:54:37.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T19:52:03.276Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "StoreDbContex.cs",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\Data\\StoreDbContex.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Data\\StoreDbContex.cs",
               "RelativeDocumentMoniker": "Data\\StoreDbContex.cs",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\Data\\StoreDbContex.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Data\\StoreDbContex.cs",
               "RelativeToolTip": "Data\\StoreDbContex.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T20:57:58.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-23T20:57:58.394Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\Models\\Db\\Product.cs",
-              "RelativeDocumentMoniker": "Models\\Db\\Product.cs",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\Models\\Db\\Product.cs",
-              "RelativeToolTip": "Models\\Db\\Product.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T20:29:23.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Merchant.cs",
-              "DocumentMoniker": "C:\\Users\\clau\\source\\repos\\NetMvc\\Models\\Db\\Merchant.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Merchant.cs",
               "RelativeDocumentMoniker": "Models\\Db\\Merchant.cs",
-              "ToolTip": "C:\\Users\\clau\\source\\repos\\NetMvc\\Models\\Db\\Merchant.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Merchant.cs",
               "RelativeToolTip": "Models\\Db\\Merchant.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-23T20:36:51.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Db\\Product.cs",
+              "ToolTip": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\Models\\Db\\Product.cs",
+              "RelativeToolTip": "Models\\Db\\Product.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T20:29:23.679Z"
             }
           ]
         }

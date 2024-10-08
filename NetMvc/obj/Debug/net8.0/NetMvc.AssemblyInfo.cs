@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetMvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fb08547230acb1ded6a71bf69b82caa1bad61de")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetMvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetMvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
