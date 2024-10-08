@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
+using NetMvc.Data;
 using NetMvc.Models;
+using NetMvc.Models.Db;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
@@ -13,9 +15,13 @@ namespace NetMvc.Controllers
 {
     public class CustomerController : Controller
     {
-        public CustomerController()
-        {
+        StoreDbContext _storeDbContext;
+        ExampleDl _exampleDl;
 
+        public CustomerController(StoreDbContext storeDbContext, ExampleDl exampleDl)
+        {
+            _storeDbContext = storeDbContext;
+            _exampleDl = exampleDl;
         }
 
         //  List<OrdersModel> productos = new List<OrdersModel>()
@@ -26,15 +32,26 @@ namespace NetMvc.Controllers
 
         public IActionResult Index()
         {
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+
+           // List<CustomerModel> data = new List<CustomerModel>();
+
+
+            var users = _storeDbContext.Users.ToList();
+
+            
+
+          
+
+
+           /** MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
             connection.Open();
 
             MySqlCommand command = connection.CreateCommand();
 
-            command.CommandText = $"SELECT id, full_name, email, gender, date_of_birth, country_code, create_at FROM users;";
+            command.CommandText = $"SELECT id, full_name, email, gender, date_of_birth, country_code, create_at FROM users_old;";
 
             MySqlDataReader reader = command.ExecuteReader();
-            List<CustomerModel> data = new List<CustomerModel>();
+            
 
             while (reader.Read())
             {
@@ -51,59 +68,78 @@ namespace NetMvc.Controllers
 
                 });
 
-            }
+            }**/
 
-            return View(data);
+            return View(users);
         }
 
         public IActionResult Creation()
         {
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
-
-            MySqlCommand command = connection.CreateCommand();
-
-            command.CommandText = $"SELECT gender_id, Description FROM gender;";
-
-            MySqlDataReader reader = command.ExecuteReader();
             List<SelectListItem> data = new List<SelectListItem>();
 
-            while (reader.Read())
-            {
+            var gender = _storeDbContext.Genders.ToList();
 
+            foreach(var genders in gender)
+            {
                 data.Add(new SelectListItem
                 {
-                    Value = reader.GetChar(0).ToString(),
-                    Text = reader.GetString(1),
-
-
-
+                    Value = genders.Id,
+                    Text = genders.Description,
                 });
             }
-            reader.Close();
 
-            connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
+            /* MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+             connection.Open();
 
-            command = connection.CreateCommand();
+             MySqlCommand command = connection.CreateCommand();
 
-            command.CommandText = $"SELECT code, name FROM countries;";
+             command.CommandText = $"SELECT gender_id, Description FROM gender_old;";
 
-            reader = command.ExecuteReader();
+             MySqlDataReader reader = command.ExecuteReader();
+
+
+             while (reader.Read())
+             {
+
+                
+             }
+             reader.Close();
+
+             connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+             connection.Open();
+
+             command = connection.CreateCommand();
+
+             command.CommandText = $"SELECT code, name FROM countries_old;";
+
+             reader = command.ExecuteReader();
+             List<SelectListItem> dataC = new List<SelectListItem>();
+
+             while (reader.Read())
+             {
+
+                 dataC.Add(new SelectListItem
+                 {
+                     Value = reader.GetInt32(0).ToString(),
+                     Text = reader.GetString(1),
+
+
+
+                 });
+             }*/
             List<SelectListItem> dataC = new List<SelectListItem>();
+            var countries = _storeDbContext.Countries.ToList();
 
-            while (reader.Read())
+            foreach (var country in countries)
             {
-
                 dataC.Add(new SelectListItem
                 {
-                    Value = reader.GetInt32(0).ToString(),
-                    Text = reader.GetString(1),
-
-
-
+                    Value = country.Code.ToString(),
+                    Text = country.Name,
                 });
             }
+
+
             return View(new CustomerModel
             {
                 Genders = data,
@@ -115,24 +151,38 @@ namespace NetMvc.Controllers
         public IActionResult Save(CustomerModel customer)
         {
 
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
+            _storeDbContext.Users.Add(new Models.Db.User
+            {
+               BirthDate = customer.BirthDate,
+               Gender = customer.Gender,
+               FullName = customer.FullName,
+               Email= customer.Email,
+               CountryCode = customer.CountryCode
 
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = connection;
 
-            command.CommandText = $"INSERT INTO `academy_net`.`users` (full_name, email, gender, date_of_birth, country_code, create_at) VALUES (?Name, ?Mail, ?Gender, ?Birth, ?Country, ?Creation);";
+            });
 
-            command.Parameters.Add("?Name", MySqlDbType.VarChar).Value = customer.FullName;
-            command.Parameters.Add("?Mail", MySqlDbType.VarChar).Value = customer.Email;
-            command.Parameters.Add("?Gender", MySqlDbType.VarChar).Value = customer.Gender;
-            command.Parameters.Add("?Birth", MySqlDbType.DateTime).Value = customer.BirthDate;
-            command.Parameters.Add("?Country", MySqlDbType.Int32).Value = customer.CountryCode;
-            command.Parameters.Add("?Creation", MySqlDbType.DateTime).Value = DateTime.Now;
+            _storeDbContext.SaveChanges();
+
+
+           //**//   MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+            //  connection.Open();
+
+            //   MySqlCommand command = new MySqlCommand();
+            //   command.Connection = connection;
+
+            //  command.CommandText = $"INSERT INTO `academy_net`.`users` (full_name, email, gender, date_of_birth, country_code, create_at) VALUES (?Name, ?Mail, ?Gender, ?Birth, ?Country, ?Creation);";
+
+            // command.Parameters.Add("?Name", MySqlDbType.VarChar).Value = customer.FullName;
+            // command.Parameters.Add("?Mail", MySqlDbType.VarChar).Value = customer.Email;
+            // command.Parameters.Add("?Gender", MySqlDbType.VarChar).Value = customer.Gender;
+            // command.Parameters.Add("?Birth", MySqlDbType.DateTime).Value = customer.BirthDate;
+            //command.Parameters.Add("?Country", MySqlDbType.Int32).Value = customer.CountryCode;
+            // command.Parameters.Add("?Creation", MySqlDbType.DateTime).Value = DateTime.Now;
 
 
             // command.CommandText = $"INSERT INTO `academy_net`.`users` (`full_name`, `email`, `gender`, `date_of_birth`, `country_code`, `create_at`) VALUES ('{customer.FullName}', '{customer.Email}', '{customer.Gender}', '{customer.BirthDate.ToString("yyyy-MM-dd HH:mm-ss")}', '{customer.CountryCode}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm-ss")}');";
-            command.ExecuteNonQuery();
+            // command.ExecuteNonQuery();**/
 
 
             //Customer.Add(customer);
@@ -140,72 +190,107 @@ namespace NetMvc.Controllers
         }
         public IActionResult Edit(int customerId)
         {
-            CustomerModel selectedCustomer = null;
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
 
-            MySqlCommand command = connection.CreateCommand();
+            var p = _storeDbContext.Users.First(x => x.Id == customerId);
+            CustomerModel selectedCustomer = new CustomerModel { 
+                BirthDate = p.BirthDate,
+                CountryCode = p.CountryCode,
+                Email = p.Email,
+                FullName = p.FullName,
+                Id = p.Id
+            } ;
 
-            command.CommandText = $"SELECT id, full_name, email, gender, date_of_birth, country_code, create_at FROM users where id = ?id;";
+            /*
+             MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+             connection.Open();
 
-            command.Parameters.Add("?id", MySqlDbType.Int32).Value = customerId;
+             MySqlCommand command = connection.CreateCommand();
 
-            MySqlDataReader reader = command.ExecuteReader();
+             command.CommandText = $"SELECT id, full_name, email, gender, date_of_birth, country_code, create_at FROM users where id = ?id;";
 
-            if (reader.Read())
-            {
-                selectedCustomer = new CustomerModel
-                {
-                    Id = reader.GetInt32(0),
-                    FullName = reader.GetString(1),
-                    Email = reader.GetString(2),
-                    Gender = reader.GetString(3),
-                    BirthDate = (DateTime)reader["date_of_birth"],
-                    CountryCode = reader.GetInt32(5),
+             command.Parameters.Add("?id", MySqlDbType.Int32).Value = customerId;
+
+             MySqlDataReader reader = command.ExecuteReader();
+
+             if (reader.Read())
+             {
+                 selectedCustomer = new CustomerModel
+                 {
+                     Id = reader.GetInt32(0),
+                     FullName = reader.GetString(1),
+                     Email = reader.GetString(2),
+                     Gender = reader.GetString(3),
+                     BirthDate = (DateTime)reader["date_of_birth"],
+                     CountryCode = reader.GetInt32(5),
 
 
-                };
-            }
-            reader.Close();
+                 };
+             }
+             reader.Close();
 
+
+             List<SelectListItem> data = new List<SelectListItem>();
+             command = connection.CreateCommand();
+             command.CommandText = $"SELECT gender_id, Description FROM gender;";
+             reader = command.ExecuteReader();
+
+             while (reader.Read())
+             {
+
+                 data.Add(new SelectListItem
+                 {
+                     Value = reader.GetChar(0).ToString(),
+                     Text = reader.GetString(1),
+
+
+
+                 });
+             }
+             reader.Close();
+
+
+             List<SelectListItem> dataC = new List<SelectListItem>();
+             command = connection.CreateCommand();
+             command.CommandText = $"SELECT code, name FROM countries;";
+             reader = command.ExecuteReader();
+
+             while (reader.Read())
+             {
+
+                 dataC.Add(new SelectListItem
+                 {
+                     Value = reader.GetInt32(0).ToString(),
+                     Text = reader.GetString(1),
+
+
+
+                 });
+             }*/
 
             List<SelectListItem> data = new List<SelectListItem>();
-            command = connection.CreateCommand();
-            command.CommandText = $"SELECT gender_id, Description FROM gender;";
-            reader = command.ExecuteReader();
 
-            while (reader.Read())
+            var gender = _storeDbContext.Genders.ToList();
+
+            foreach (var genders in gender)
             {
-
                 data.Add(new SelectListItem
                 {
-                    Value = reader.GetChar(0).ToString(),
-                    Text = reader.GetString(1),
-
-
-
+                    Value = genders.Id,
+                    Text = genders.Description,
                 });
             }
-            reader.Close();
-
-
             List<SelectListItem> dataC = new List<SelectListItem>();
-            command = connection.CreateCommand();
-            command.CommandText = $"SELECT code, name FROM countries;";
-            reader = command.ExecuteReader();
+            var countries = _storeDbContext.Countries.ToList();
 
-            while (reader.Read())
+            foreach (var country in countries)
             {
-
                 dataC.Add(new SelectListItem
                 {
-                    Value = reader.GetInt32(0).ToString(),
-                    Text = reader.GetString(1),
-
-
-
+                    Value = country.Code.ToString(),
+                    Text = country.Name,
                 });
             }
+
             if (selectedCustomer != null)
             {
                 selectedCustomer.Genders = data;
@@ -219,41 +304,62 @@ namespace NetMvc.Controllers
         }
         public IActionResult EditSave(CustomerModel customer)
         {
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
+            var user = _storeDbContext.Users.First(x => x.Id == customer.Id);
 
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = connection;
+            user.Email = customer.Email;
+            user.FullName = customer.FullName;
+            user.CountryCode = customer.CountryCode;
+            user.BirthDate = customer.BirthDate;
+            user.Gender = customer.Gender;
+            user.Id = customer.Id;
 
-            command.CommandText = $"UPDATE `academy_net`.`users` SET full_name=?Name, email=?Mail, gender=?Gender, date_of_birth=?Birth, country_code=?Country where id = ?id";
+            _storeDbContext.Users.Update(user);
+            _storeDbContext.SaveChanges();
 
-            command.Parameters.Add("?Name", MySqlDbType.VarChar).Value = customer.FullName;
-            command.Parameters.Add("?Mail", MySqlDbType.VarChar).Value = customer.Email;
-            command.Parameters.Add("?Gender", MySqlDbType.VarChar).Value = customer.Gender;
-            command.Parameters.Add("?Birth", MySqlDbType.DateTime).Value = customer.BirthDate;
-            command.Parameters.Add("?Country", MySqlDbType.Int32).Value = customer.CountryCode;
-            command.Parameters.Add("?id", MySqlDbType.Int32).Value = customer.Id;
+
+
+
+            // MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+            //connection.Open();
+
+            //MySqlCommand command = new MySqlCommand();
+            //command.Connection = connection;
+
+            //command.CommandText = $"UPDATE `academy_net`.`users` SET full_name=?Name, email=?Mail, gender=?Gender, date_of_birth=?Birth, country_code=?Country where id = ?id";
+
+            //command.Parameters.Add("?Name", MySqlDbType.VarChar).Value = customer.FullName;
+            //command.Parameters.Add("?Mail", MySqlDbType.VarChar).Value = customer.Email;
+            //command.Parameters.Add("?Gender", MySqlDbType.VarChar).Value = customer.Gender;
+            //command.Parameters.Add("?Birth", MySqlDbType.DateTime).Value = customer.BirthDate;
+            //command.Parameters.Add("?Country", MySqlDbType.Int32).Value = customer.CountryCode;
+            //command.Parameters.Add("?id", MySqlDbType.Int32).Value = customer.Id;
 
 
             // command.CommandText = $"INSERT INTO `academy_net`.`users` (`full_name`, `email`, `gender`, `date_of_birth`, `country_code`, `create_at`) VALUES ('{customer.FullName}', '{customer.Email}', '{customer.Gender}', '{customer.BirthDate.ToString("yyyy-MM-dd HH:mm-ss")}', '{customer.CountryCode}', '{DateTime.Now.ToString("yyyy-MM-dd HH:mm-ss")}');";
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
 
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int Id)
         {
-            MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
-            connection.Open();
+            var user = _storeDbContext.Users.First(x => x.Id == Id);
 
-            MySqlCommand command = new MySqlCommand();
-            command.Connection = connection;
+            _storeDbContext.Users.Remove(user);
 
-            command.CommandText = $"DELETE FROM `academy_net`.`users` where id = ?id;";
-            command.Parameters.Add("?id", MySqlDbType.Int32).Value = Id;
+            _storeDbContext.SaveChanges();
+
+            // MySqlConnection connection = new MySqlConnection("user Id=root;Password=samy1;Host=localhost;Database=academy_net;");
+            //connection.Open();
+
+            //            MySqlCommand command = new MySqlCommand();
+            //          command.Connection = connection;
+
+            //        command.CommandText = $"DELETE FROM `academy_net`.`users` where id = ?id;";
+            //      command.Parameters.Add("?id", MySqlDbType.Int32).Value = Id;
 
 
 
-            command.ExecuteNonQuery();
+            //    command.ExecuteNonQuery();
 
 
 

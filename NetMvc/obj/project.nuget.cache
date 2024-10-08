@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GGTKpPTP3VE=",
+  "dgSpecHash": "DUAuUjI2jlk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\clau\\source\\repos\\NetMvc\\NetMvc.csproj",
+  "projectFilePath": "C:\\Users\\clau\\Desktop\\mis repositorios\\omr\\NetMvc\\NetMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\clau\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\clau\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
